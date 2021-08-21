@@ -1,0 +1,12 @@
+/* COLOR PALETTE */
+:root{
+    --background-body: #ebebeb;
+    --background-sidebar: #fff;
+    --background-header: #fff;
+    --text-toolbar: rgb(97, 97, 97);
+    --background-hover: #a8a8f0;
+    --text-link: #5656a8;
+    --text-link-hover: #fff;
+    --border-color: rgb(210 210 210 / 73%);
+    --text-content: #000;
+}

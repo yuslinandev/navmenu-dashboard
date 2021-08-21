@@ -1,0 +1,29 @@
+@media (min-width: 320px) and (max-width: 480px) {
+    .sidebar{
+        left: -80px;
+        top:75px;
+        height:calc(100vh - 75px);
+        position: fixed;
+        overflow: auto;
+    }
+    header{
+        position: fixed;
+        top:0;
+        width: 100%;
+    }
+    .container{
+        margin-left: 0;
+        padding-top: 75px;
+    }
+    .sidebar-toggle{
+        left: 0;
+    }
+    .cover-logo{
+        display: none;
+    }
+
+    /* CONTENT */
+    .content img{
+        float:none;
+    }
+}
