@@ -26,10 +26,31 @@ body {
     background-color: var(--background-body);
 }
 
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--background-sidebar);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(165, 164, 255);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(151, 140, 255);
+  }
+
 /* SIDEBAR */
 .sidebar{
     width: 80px;
-    position:absolute;
+    position:fixed;
     height: 100vh;
     background-color: var(--background-sidebar);
     border-right: 1px solid var(--border-color);
@@ -44,13 +65,14 @@ body {
     border-bottom: 1px solid var(--border-color);
     height: 75px;
     padding: 10px 15px;
-    position: relative;
+    position: fixed;
+    width: inherit;
 }
 .cover-logo img {
     max-width: 100%;
     height: auto;
 }
-.logo-fixed{
+#logo-full{
     display: none;
     top: 50%;
     transform: translate(0, -50%);
@@ -61,7 +83,11 @@ body {
 
 nav.navi {
     padding: 10px;
-    overflow: hidden;
+    overflow: auto;
+    position: fixed;
+    top: 75px;
+    width: inherit;
+    height: calc(100vh - 75px);
 }
 
 /* -- FIRST LEVEL */
@@ -84,18 +110,28 @@ nav.navi ul li a:hover{
 }
 nav.navi ul li a i{
     margin-right:10px;
+    width:20px;
 }
 nav.navi ul li a span {
     display: none;
     white-space: nowrap;
     font-size: .9em;
+    font-weight:600;
 }
 i.more {
     position: absolute;
-    right: 5px;
+    right: 10px;
     font-size: .7em;
     color: #7f7fa0;
     display: none;
+    margin: 0;
+    width: auto!important;
+
+    -webkit-transition:all 200ms linear;
+	-moz-transition:all 200ms linear;
+	-o-transition:all 200ms linear;
+	-ms-transition:all 200ms linear;
+	transition:all 200ms linear;
 }
 
 /* -- SUBMENU */
@@ -106,6 +142,9 @@ ul.submenu {
 }
 ul.submenu li span{
     display: block!important;
+}
+.submenu li a i{
+    font-size: .7em;
 }
     
 /* CONTAINER */
@@ -149,11 +188,11 @@ header {
     width:275px!important;
     z-index:2;
 }
-.sidebar-toggle .logo-fixed{
-    display: block;
-}
-.sidebar-toggle .logo-toggle{
+.sidebar-toggle #logo{
     display: none;
+}
+.sidebar-toggle #logo-full{
+    display: block;
 }
 .sidebar-toggle .item span{
     display:inline-block!important;
